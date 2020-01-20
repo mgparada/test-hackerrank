@@ -1,6 +1,6 @@
 <?php
 
-namespace Deliverea\CoffeeMachine\Tests\Unit\Console;
+namespace GetWith\CoffeeMachine\Tests\Unit\Console;
 
 use PHPUnit\Framework\TestCase;
 

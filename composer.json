@@ -3,11 +3,14 @@
         "symfony/console": "^4.2",
         "phpunit/phpunit": "^7.5"
     },
+    "require-dev": {
+        "infection/infection": "^0.15.0"
+    },
     "autoload": {
         "psr-4": {
-            "Deliverea\\CoffeeMachine\\": "src",
-            "Deliverea\\CoffeeMachine\\Tests\\Unit\\": "tests/Unit",
-            "Deliverea\\CoffeeMachine\\Tests\\Integration\\": "tests/Integration"
+            "GetWith\\CoffeeMachine\\": "src",
+            "GetWith\\CoffeeMachine\\Tests\\Unit\\": "tests/Unit",
+            "GetWith\\CoffeeMachine\\Tests\\Integration\\": "tests/Integration"
         }
     }
 }

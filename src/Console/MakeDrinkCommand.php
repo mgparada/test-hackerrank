@@ -1,6 +1,6 @@
 <?php
 
-namespace Deliverea\CoffeeMachine\Console;
+namespace GetWith\CoffeeMachine\Console;
 
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
@@ -11,6 +11,12 @@ use Symfony\Component\Console\Output\OutputInterface;
 class MakeDrinkCommand extends Command
 {
     protected static $defaultName = 'app:order-drink';
+
+    public function __construct()
+    {
+        parent::__construct(MakeDrinkCommand::$defaultName);
+    }
+
 
     protected function configure()
     {
@@ -91,16 +97,6 @@ class MakeDrinkCommand extends Command
             } else {
                 $output->writeln('The number of sugars should be between 0 and 2.');
             }
-
-            $pdo = MysqlPdoClient::getPdo();
-
-            $stmt= $pdo->prepare( 'INSERT INTO orders (drink_type, sugars, stick, extra_hot) VALUES (:drink_type, :sugars, :stick, :extra_hot)');
-            $stmt->execute([
-                'drink_type' => $drinkType,
-                'sugars' => $sugars,
-                'stick' => $stick ?: 0,
-                'extra_hot' => $extraHot ?: 0,
-            ]);
         }
     }
 }

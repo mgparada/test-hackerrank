@@ -66,7 +66,6 @@ His legacy is the class `MakeDrinkCommand`. This class handle all the applicatio
 * It reads input parameters
 * It validates input parameters
 * It shows output message
-* It stores orders in the database
 
 He also implemented an integration test covering all possibilities (`MakeDrinkCommandTest`)
 
